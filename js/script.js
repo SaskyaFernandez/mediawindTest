@@ -1,30 +1,30 @@
-users = []
+const API_KEY = "ed54re8b4e186gv41ez86g4rz816b41r8bgqr41gb8"
 
 $.ajax(" https://modules.greenplayer.com/webservices/sandbox/users.php", {
         headers: {
-            "APIKEY": "ed54re8b4e186gv41ez86g4rz816b41r8bgqr41gb8"
+            "APIKEY": API_KEY
         }
     })
     .done(function (response) {
         response.json
     })
     .done(function (responseUser) {
-
-
+        
         $.ajax(" https://modules.greenplayer.com/webservices/sandbox/informations.php", {
                 headers: {
-                    "APIKEY": "ed54re8b4e186gv41ez86g4rz816b41r8bgqr41gb8"
+                    "APIKEY": API_KEY
                 }
             })
             .done(function (response) {
                 response.json
             })
             .done(function (responseinfo) {
+                let users = []
 
                 for (let i = 0; i < responseUser.length; i++) {
                     for (let j = 0; j < responseinfo.length; j++) {
                         if (responseUser[i].id == responseinfo[j].id) {
-                            user = {
+                            let user = {
                                 picture: responseinfo[j].picture,
                                 id: responseUser[i].id,
                                 firstname: responseUser[i].firstname,
