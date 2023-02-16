@@ -1,0 +1,15 @@
+.col-5 {
+  background-color: #eeeeee;
+  margin: 10px;
+  border-radius: 15px;
+}
+.col-5 .userPicture {
+  padding: 10px;
+}
+.col-5 .userPicture img {
+  width: 10vw;
+}
+.col-5 .userInfo {
+  margin: 0 10px;
+  padding: 10px;
+}/*# sourceMappingURL=style.css.map */
